@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "FPN Hub: Public Technical Overview"
+message: "If you reference this public technical overview, please cite it as below."
+type: generic
+authors:
+  - family-names: Skalski
+    given-names: Sebastian
+repository-code: "https://github.com/FPN-Systems/fpn-hub-public"
+url: "https://fpn-systems.com/"
+date-released: "2026-06-01"
+license: "LicenseRef-all-rights-reserved"
+abstract: >
+  Public technical overview of FPN Hub, a PCT-pending deterministic topology
+  framework for quantum processor architecture. This repository provides public
+  framing and benchmark methodology notes only; protected construction logic
+  and non-public benchmark materials are not disclosed. This citation refers
+  to the public technical overview, not to protected implementation code or
+  topology construction logic.
+keywords:
+  - quantum computing
+  - quantum processor architecture
+  - topology
+  - transpilation
+  - benchmarking
+  - routing
