@@ -5,7 +5,7 @@ type: generic
 authors:
   - family-names: Skalski
     given-names: Sebastian
-repository-code: "https://github.com/FPN-Systems/fpn-hub-public"
+repository-code: "https://github.com/webkontakt2-arch/fpn-hub"
 url: "https://fpn-systems.com/"
 date-released: "2026-06-01"
 license: "LicenseRef-all-rights-reserved"
