@@ -1,21 +1,20 @@
 cff-version: 1.2.0
 title: "FPN Hub: Public Technical Overview"
-message: "If you reference this public technical overview, please cite it as below."
-type: generic
+message: "For scientific discussion of the public benchmark results, please cite the preferred citation below."
 authors:
   - family-names: Skalski
     given-names: Sebastian
 repository-code: "https://github.com/webkontakt2-arch/fpn-hub"
 url: "https://fpn-systems.com/"
 date-released: "2026-06-01"
-license: "LicenseRef-all-rights-reserved"
+license-url: "https://github.com/webkontakt2-arch/fpn-hub/blob/main/LICENSE"
 abstract: >
   Public technical overview of FPN Hub, a PCT-pending deterministic topology
-  framework for quantum processor architecture. This repository provides public
-  framing and benchmark methodology notes only; protected construction logic
-  and non-public benchmark materials are not disclosed. This citation refers
-  to the public technical overview, not to protected implementation code or
-  topology construction logic.
+  framework for quantum processor architecture. The repository provides public
+  technical framing and an IP-safe benchmark methodology summary. Selected
+  benchmark results are publicly available in the associated Zenodo preprint,
+  while protected topology construction logic, generators, coupling maps, and
+  non-public implementation materials are not disclosed.
 keywords:
   - quantum computing
   - quantum processor architecture
@@ -23,3 +22,13 @@ keywords:
   - transpilation
   - benchmarking
   - routing
+  - modular quantum computing
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Skalski
+      given-names: Sebastian
+  title: "IP-Safe Routing Benchmarks for a Protected Modular Qubit Interconnect: Nonlocality Stress Tests, Compiler Cross-Checks, and Baseline-Specific Trade-offs"
+  year: 2026
+  doi: "10.5281/zenodo.21308015"
+  url: "https://doi.org/10.5281/zenodo.21308015"
