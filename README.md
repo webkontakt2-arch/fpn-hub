@@ -6,53 +6,75 @@ The project explores how connectivity structure may affect routing overhead, two
 
 ## Repository scope
 
-This repository is intentionally limited to public technical framing. It supports orientation and dialogue for potential evaluation partners. It does not disclose protected implementation details, topology construction logic, internal architectural mechanisms, or non-public benchmark data.
+This repository is intentionally limited to public technical framing. It supports orientation and dialogue for potential evaluation partners.
 
-The benchmark protocol used in public discussion is documented in [`docs/benchmark-methodology.md`](docs/benchmark-methodology.md).
+Selected IP-safe benchmark results are now publicly available, but this repository does **not** disclose protected topology construction logic, topology generators, coupling maps, internal architectural mechanisms, or other implementation details reserved under the FPN Hub intellectual-property boundary.
+
+The benchmark protocol used in public discussion is summarized in [docs/benchmark-methodology.md](docs/benchmark-methodology.md).
 
 ## Status
 
 PCT patent pending (priority March 2026).
 
+## Public research
+
+A technical preprint reporting IP-safe routing benchmarks, nonlocality stress tests, compiler cross-checks, and baseline-specific trade-offs is publicly available on Zenodo:
+
+> **Sebastian Skalski (2026). _IP-Safe Routing Benchmarks for a Protected Modular Qubit Interconnect: Nonlocality Stress Tests, Compiler Cross-Checks, and Baseline-Specific Trade-offs_.**  
+> DOI: [10.5281/zenodo.21308015](https://doi.org/10.5281/zenodo.21308015)
+
+The preprint is the primary public source for the reported numerical benchmark results and their stated limitations.
+
 ## Public benchmark signal
 
-In public communication materials, FPN Hub has been reported as reaching up to ~3.9× fewer two-qubit gates vs Heavy-Hex in routing-heavy workloads at the transpilation level.
+In the published benchmark campaign, selected routing-heavy workloads reached a **baseline/FPN two-qubit gate-count ratio of up to 3.69×** relative to the corresponding Heavy-Hex baseline under the reported transpilation conditions.
 
-This is a conditional architecture-level signal — not a universal advantage and not yet a hardware-validated result. Detailed numerical results, scripts, topology-specific materials, and additional baselines are available only under appropriate confidentiality.
+This is a conditional architecture-level result, not a claim of universal superiority and not a hardware-validated or fault-tolerant-computing result. The public study also reports workload-, baseline-, scale-, and compiler-dependent trade-offs, including cases where competing topologies are preferable.
 
-## Visual summary
+Further work is extending validation toward more hardware-aware and fault-tolerant/logical-workload settings. No hardware-level or FTQC advantage is claimed by the current public benchmark study.
 
-A short visual summary of the benchmark story is available here:
+## Public / protected boundary
+
+Publicly available material includes selected benchmark results, methodological framing, comparative analyses, and IP-safe research conclusions.
+
+The following remain outside the public scope of this repository:
+
+- protected topology construction rules and internal architectural mechanisms;
+- topology generators and protected coupling-map definitions;
+- non-public implementation materials and internal design parameters;
+- unpublished benchmark campaigns, scripts, and datasets not explicitly released by FPN Systems.
+
+Additional technical material may be reviewed with suitable evaluation partners under appropriate confidentiality arrangements.
+
+## Project links
 
 - Project website: https://fpn-systems.com
-- LinkedIn: [Sebastian Skalski, PhD](https://www.linkedin.com/in/sebastian-skalski-phd)
-
-Selected public materials will be available in the `media/` folder.
+- LinkedIn: https://www.linkedin.com/in/sebastian-skalski-phd
+- Public preprint: https://doi.org/10.5281/zenodo.21308015
 
 ## Collaboration
 
 FPN Hub is open to technical discussion, architecture evaluation, benchmarking dialogue, licensing conversations, and selected strategic collaboration with partners working in:
 
-- quantum hardware
-- processor architecture
-- compiler or transpilation research
-- benchmarking infrastructure
-- related deep-tech areas
-
-Detailed technical material — reference scripts, numerical benchmark results, and topology specifics — is available for direct review under appropriate confidentiality.
+- quantum hardware;
+- processor architecture;
+- compiler or transpilation research;
+- benchmarking infrastructure;
+- fault-tolerant quantum-computing architecture;
+- related deep-tech areas.
 
 ## How to cite
 
-If you refer to this public overview, please cite:
+For scientific discussion of the public benchmark results, please cite the Zenodo preprint:
 
-> Skalski, S. (2026). *FPN Hub: Public Technical Overview*. FPN Systems. PCT patent pending.
+> Skalski, S. (2026). _IP-Safe Routing Benchmarks for a Protected Modular Qubit Interconnect: Nonlocality Stress Tests, Compiler Cross-Checks, and Baseline-Specific Trade-offs_. Zenodo. https://doi.org/10.5281/zenodo.21308015
 
-See also [`CITATION.cff`](CITATION.cff).
+For reference to this repository itself, see [CITATION.cff](CITATION.cff).
 
 ## Contact
 
-- **Contact:** contact@fpn-systems.com
-- **Website:** https://fpn-systems.com
+- Contact: contact@fpn-systems.com
+- Website: https://fpn-systems.com
 
 ## License
 
