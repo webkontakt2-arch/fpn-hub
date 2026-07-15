@@ -1,62 +1,87 @@
 # Benchmark Methodology
 
-This document specifies the evaluation protocol used in public discussion of FPN Hub: tooling, baseline, circuit categories, repetition protocol, and reporting framework at the architecture-level benchmark stage.
+This document summarizes the public evaluation protocol used in the current FPN Hub benchmark discussion. It covers the benchmark stage, tooling, comparison principles, repetition protocol, reporting framework, and interpretation boundaries without disclosing protected topology-construction details.
 
-## Status
+## Status and authoritative public source
 
-PCT patent pending (priority March 2026). This document is limited to standard, publicly known benchmarking practice. Numerical results, scale ranges, topology parameters, and construction logic are not disclosed here; they are available under NDA.
+FPN Hub is PCT patent pending (priority March 2026).
+
+Selected numerical results and IP-safe methodological details are publicly reported in the following preprint:
+
+> Sebastian Skalski (2026). _IP-Safe Routing Benchmarks for a Protected Modular Qubit Interconnect: Nonlocality Stress Tests, Compiler Cross-Checks, and Baseline-Specific Trade-offs_. Zenodo.  
+> https://doi.org/10.5281/zenodo.21308015
+
+The preprint should be treated as the primary public source for exact reported results, benchmark boundaries, and study-specific conclusions. Protected topology construction logic, topology generators, protected coupling maps, and other non-public implementation details are not disclosed here.
 
 ## Tooling
 
-- Qiskit (1.x or compatible)
-- Transpiler `optimization_level = 1` (public communication benchmark series)
-- Routing pass: SABRE
-- Layout pass: SABRE
-- Coupling map: per topology under evaluation
+For the main published Qiskit benchmark campaign:
 
-Note: at higher optimization levels (e.g., `optimization_level = 3`) the routing advantage decreases, as aggressive optimization benefits more layout-constrained topologies. The headline signal reported in public materials corresponds to `optimization_level = 1`. Results at other optimization levels are available under NDA.
+- Qiskit 2.3.1;
+- transpiler `optimization_level = 1` for the principal public comparison series;
+- SABRE-based layout and routing;
+- topology-specific coupling maps supplied to the compiler under the benchmark protocol.
 
-Reference scripts may be shared with evaluation partners under mutual NDA.
+Selected cross-compiler checks are reported in the public preprint. Compiler-dependent behavior is treated as a result rather than assumed away.
 
-## Baseline
+Higher optimization settings and alternative compilation choices can change the magnitude of routing differences. Therefore, results are interpreted within the stated compiler and optimization configuration rather than as compiler-independent constants.
 
-Heavy-Hex (IBM-style lattice) is used as the public reference topology. Additional baselines may be discussed under NDA.
+## Baselines
 
-## Circuit categories
+Heavy-Hex is used as an important public reference topology, but the published study is not limited to a single baseline.
 
-Evaluation spans more than one circuit class to avoid drawing conclusions from a single favorable workload. Categories considered include:
+The public analysis explicitly treats comparative performance as **baseline-specific**. A favorable result against one reference topology is not presented as evidence of superiority over all alternative connectivity structures.
 
-- routing-intensive structured circuits (e.g., Quantum Fourier Transform)
-- volumetric benchmarks following published quantum-volume conventions
-- hardware-efficient variational ansatz patterns
-- locality-friendly classes (e.g., GHZ-state preparation, shallow Trotter)
+## Workload coverage
 
-Specific widths, depths, and parameter ranges are not disclosed publicly.
+The public evaluation uses multiple workload families to reduce the risk of drawing conclusions from a single favorable circuit class. Publicly reported analyses include, among others:
 
-## Repetition
+- routing-heavy random workloads;
+- QAOA workloads at multiple depths;
+- Bernstein–Vazirani workloads;
+- GHZ-style locality-friendly control workloads;
+- controlled nonlocality stress tests;
+- selected established benchmark-circuit families;
+- compiler cross-checks for selected comparisons.
 
-Each (topology, circuit, configuration) point is evaluated across multiple independent seeds for both layout and routing passes. Single-seed outcomes are not treated as evidence; reported signals reflect multi-seed aggregation.
+The study also reports negative and boundary results where the protected topology does not outperform a comparator.
 
-## Reporting
+## Repetition and pairing
 
-- mean and standard deviation across seeds
-- paired comparison between topologies on identical seeds and circuits
-- two-qubit gate count and circuit depth reported separately
+Each relevant topology/circuit/configuration point is evaluated across multiple independent seeds where applicable.
 
-The last point is intentional: a reduction in routing-induced two-qubit gates does not, on its own, imply a reduction in circuit depth.
+Comparisons are paired on matching circuits and benchmark conditions. Single-seed outcomes are not treated as sufficient evidence for a general performance claim.
 
-## Interpretation
+## Reported metrics
 
-- Architecture-level signal is not equivalent to full-stack hardware advantage.
-- Trade-offs are stated rather than averaged away.
-- Conditional relevance (workload, scale, hardware) is not reframed as universal superiority.
-- The critical open step is validation under matching hardware conditions.
+Public reporting distinguishes at least:
+
+- two-qubit gate count;
+- circuit depth;
+- mean and variability across repeated runs;
+- paired topology comparisons under matched benchmark conditions;
+- ratio direction, with the numerator and denominator stated explicitly where ratios are used.
+
+Two-qubit gate count and circuit depth are reported separately because a reduction in routing-induced two-qubit gates does not, by itself, imply a reduction in circuit depth.
+
+## Interpretation principles
+
+- Architecture-level transpilation results are not equivalent to hardware-level performance.
+- Routing advantage is conditional on workload, baseline, scale, compiler, and benchmark configuration.
+- Trade-offs and negative results are reported rather than averaged away.
+- Results against a particular baseline are not reframed as universal topology superiority.
+- The present public benchmark does not establish fault-tolerant or logical-qubit system advantage.
+- Hardware-aware and fault-tolerant/logical-level validation are separate evaluation stages.
+
+## Reproducibility and IP boundary
+
+The public preprint provides the released scientific results and IP-safe methodological description.
+
+This repository does not publish protected construction rules, topology generators, protected coupling maps, internal design parameters, or non-public benchmark materials. Additional scripts, datasets, and topology-specific materials may be made available to suitable evaluation partners under appropriate confidentiality arrangements.
 
 ## Contact
 
-For technical dialogue or NDA-based access to scripts and detailed results:
+For technical dialogue or discussion of evaluation access:
 
-- **Contact:** contact@fpn-systems.com
-- **Website:** https://fpn-systems.com
-
-
+- Contact: contact@fpn-systems.com
+- Website: https://fpn-systems.com
